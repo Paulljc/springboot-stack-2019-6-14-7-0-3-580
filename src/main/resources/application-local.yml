@@ -7,3 +7,5 @@ logging:
         springframework:
           web: DEBUG
         hibernate: ERROR
+Server:
+  port: 9527
