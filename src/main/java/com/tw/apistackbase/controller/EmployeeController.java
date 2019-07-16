@@ -26,7 +26,7 @@ public class EmployeeController {
         return repository.addEmpolyee(employee);
     }
 
-    @PostMapping("/employees{empolyeeId}")
+    @DeleteMapping("/employees{empolyeeId}")
     public Employee deleteEmployeeById(@PathVariable String empolyeeId){
         return repository.removeEmpolyee(empolyeeId);
     }

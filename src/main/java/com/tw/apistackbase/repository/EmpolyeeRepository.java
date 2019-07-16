@@ -9,10 +9,10 @@ public class EmpolyeeRepository {
     private static final Map<String , Employee> employees = new HashMap<>();
 
     static {
-        employees.put("1", createEmployee("111", "hehe", 18, "male"));
-        employees.put("2", createEmployee("112","hehe", 18, "male"));
-        employees.put("3", createEmployee( "113","hehe", 18, "male"));
-        employees.put("4", createEmployee( "114","hehe", 18, "male"));
+        employees.put("111", createEmployee("111", "hehe", 18, "male"));
+        employees.put("112", createEmployee("112","hehe", 18, "male"));
+        employees.put("113", createEmployee( "113","hehe", 18, "male"));
+        employees.put("114", createEmployee( "114","hehe", 18, "male"));
     }
 
     private static Employee createEmployee(String empolyeeId, String name, int age, String gender) {
@@ -34,7 +34,8 @@ public class EmpolyeeRepository {
 
     public Employee addEmpolyee(Employee employee) {
         String empolyeeId = UUID.randomUUID().toString();
-        return employees.put(empolyeeId, createEmployee(empolyeeId, employee.getName(), employee.getAge(), employee.getGender()));
+        employees.put(empolyeeId, createEmployee(empolyeeId, employee.getName(), employee.getAge(), employee.getGender()));
+        return employee;
     }
 
 
