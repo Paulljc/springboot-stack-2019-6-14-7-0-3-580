@@ -33,7 +33,7 @@ public class EmployeeController {
         return repository.updateEmpolyee(employee);
     }
 
-    @DeleteMapping("/employees{empolyeeId}")
+    @DeleteMapping("/employees/{empolyeeId}")
     public Employee deleteEmployeeById(@PathVariable String empolyeeId){
         return repository.removeEmpolyee(empolyeeId);
     }
