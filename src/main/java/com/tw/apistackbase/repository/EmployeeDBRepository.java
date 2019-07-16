@@ -51,8 +51,12 @@ public class EmployeeDBRepository implements EmpolyeeRepository{
 
     public Employee updateEmpolyee(Employee employee) {
         if (employees.containsKey(employee.getId())){
-            employee.setId(employee.getId());
-            return employees.put(employee.getId(), employee);
+            //get
+            Employee updateEmployee = employees.get(employee.getId());
+            updateEmployee.setName(employee.getName());
+            updateEmployee.setGender(employee.getGender());
+            updateEmployee.setAge(employee.getAge());
+            return employees.put(employee.getId(), updateEmployee);
         }
         return null;
     }
