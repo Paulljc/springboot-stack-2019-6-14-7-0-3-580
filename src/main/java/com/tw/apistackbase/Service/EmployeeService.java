@@ -13,29 +13,29 @@ import java.util.List;
 public class EmployeeService {
 
     @Autowired
-    EmpolyeeRepository repository;
+    private EmpolyeeRepository repository;
 
     public List<Employee> getAllEmployees(){
         return repository.findAll();
     }
 
-    public Employee getEmployeesById(@PathVariable String empolyeeId){
+    public Employee getEmployeesById(String empolyeeId){
         return repository.findById(empolyeeId);
     }
 
-    public Employee createEmployee(@RequestBody Employee employee){
+    public Employee createEmployee(Employee employee){
         return repository.addEmpolyee(employee);
     }
 
-    public Employee updateEmployee(@PathVariable Employee employee){
+    public Employee updateEmployee(Employee employee){
         return repository.updateEmpolyee(employee);
     }
 
-    public Employee deleteEmployeeById(@PathVariable String empolyeeId){
+    public Employee deleteEmployeeById(String empolyeeId){
         return repository.removeEmpolyee(empolyeeId);
     }
 
-    public List<Employee> findAgeAbove(@RequestParam int ageMini){
+    public List<Employee> findAgeAbove(int ageMini){
         return repository.findAgeAbove(ageMini);
     }
 }
